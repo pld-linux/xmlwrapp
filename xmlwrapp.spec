@@ -60,7 +60,7 @@ CXX="%{__cxx}" perl ./configure.pl --prefix $RPM_BUILD_ROOT%{_prefix}
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install
-perl -i -p -e "s|$RPM_BUILD_ROOT||" $RPM_BUILD_ROOT{%{_bindir}/*,%{_libdir}/pkgconfig/*}
+perl -i -p -e "s|$RPM_BUILD_ROOT||g" $RPM_BUILD_ROOT{%{_bindir}/*,%{_libdir}/pkgconfig/*}
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cd examples
@@ -76,13 +76,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE
 %attr(755,root,root) %{_libdir}/*.so.*
-%{_libdir}/pkgconfig/%{name}.pc
 
 %files devel
 %defattr(644,root,root,755)
 # TODO: process this docbook, generate doxygen stuff
 %doc README docs/CREDITS docs/TODO docs/manual docs/project
 %attr(755,root,root) %{_bindir}/*
+%{_libdir}/pkgconfig/%{name}.pc
 %{_includedir}/*
 %{_libdir}/*.so
 %{_examplesdir}/%{name}-%{version}
