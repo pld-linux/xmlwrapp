@@ -10,7 +10,7 @@ Source0:	http://pmade.org/software/xmlwrapp/download/%{name}-%{version}.tar.gz
 # Source0-md5:	d949a40d72e614586e0108c4f98572a5
 URL:		http://pmade.org/software/xmlwrapp/
 BuildRequires:	libxml2-devel
-BuildRequires:	libxslt-devel
+BuildRequires:	libxslt-devel >= 1.0.23
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -19,7 +19,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 xmlwrapp is a modern style C++ library for working with XML data. It
 provides a simple and easy to use interface for the very powerful
 libxml2 XML parser and the libxslt XSLT engine.
-
 
 %description -l pl
 xmlwrapp jest nowoczesn± bibliotek± napisan± w C++, s³u¿ac± do pracy z
@@ -54,13 +53,17 @@ Biblioteki statyczne dla xmlwrapp.
 %setup -q
 
 %build
-CXX="%{__cxx}" perl ./configure.pl --prefix $RPM_BUILD_ROOT%{_prefix}
+CXX="%{__cxx}" \
+%{__perl} ./configure.pl \
+	--prefix $RPM_BUILD_ROOT%{_prefix}
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install
-perl -i -p -e "s|$RPM_BUILD_ROOT||g" $RPM_BUILD_ROOT{%{_bindir}/*,%{_libdir}/pkgconfig/*}
+
+%{__perl} -pi -e "s|$RPM_BUILD_ROOT||g" $RPM_BUILD_ROOT{%{_bindir}/*,%{_pkgconfigdir}/*}
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cd examples
@@ -82,9 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 # TODO: process this docbook, generate doxygen stuff
 %doc README docs/CREDITS docs/TODO docs/manual docs/project
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/pkgconfig/%{name}.pc
+%attr(755,root,root) %{_libdir}/*.so
 %{_includedir}/*
-%{_libdir}/*.so
+%{_pkgconfigdir}/%{name}.pc
 %{_examplesdir}/%{name}-%{version}
 
 %files static
