@@ -22,7 +22,7 @@ provides a simple and easy to use interface for the very powerful
 libxml2 XML parser and the libxslt XSLT engine.
 
 %description -l pl
-xmlwrapp jest nowoczesn± bibliotek± napisan± w C++, s³u¿ac± do pracy z
+xmlwrapp jest nowoczesn± bibliotek± napisan± w C++, s³u¿±c± do pracy z
 danymi w formacie XML. Dostarcza ona proste i ³atwe w u¿yciu
 miêdzymordzie do libxml2 oraz libxslt.
 
