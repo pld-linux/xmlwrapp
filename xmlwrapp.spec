@@ -1,13 +1,13 @@
 Summary:	libxml2 C++ wrapper
 Summary(pl):	Wi±zania C++ dla libxml2
 Name:		xmlwrapp
-Version:	0.4.3
+Version:	0.4.4
 Release:	1
 License:	BSD-like
 Group:		Libraries
 Vendor:		Peter J Jones <pjones@pmade.org>
 Source0:	http://pmade.org/software/xmlwrapp/download/%{name}-%{version}.tar.gz
-# Source0-md5:	d949a40d72e614586e0108c4f98572a5
+# Source0-md5:	4975137065da35919d2c54b34a7bbcb4
 URL:		http://pmade.org/software/xmlwrapp/
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-devel >= 1.0.23
