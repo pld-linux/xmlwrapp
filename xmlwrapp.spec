@@ -1,5 +1,5 @@
 Summary:	libxml2 C++ wrapper
-Summary(pl):	Wi±zania C++ dla libxml2
+Summary(pl.UTF-8):   WiÄ…zania C++ dla libxml2
 Name:		xmlwrapp
 Version:	0.5.0
 Release:	1
@@ -20,33 +20,33 @@ xmlwrapp is a modern style C++ library for working with XML data. It
 provides a simple and easy to use interface for the very powerful
 libxml2 XML parser and the libxslt XSLT engine.
 
-%description -l pl
-xmlwrapp jest nowoczesn± bibliotek± napisan± w C++, s³u¿±c± do pracy z
-danymi w formacie XML. Dostarcza ona proste i ³atwe w u¿yciu
-miêdzymordzie do libxml2 oraz libxslt.
+%description -l pl.UTF-8
+xmlwrapp jest nowoczesnÄ… bibliotekÄ… napisanÄ… w C++, sÅ‚uÅ¼Ä…cÄ… do pracy z
+danymi w formacie XML. Dostarcza ona proste i Å‚atwe w uÅ¼yciu
+miÄ™dzymordzie do libxml2 oraz libxslt.
 
 %package devel
 Summary:	Development files for xmlwrapp
-Summary(pl):	Pliki nag³ówkowe dla xmlwrapp
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe dla xmlwrapp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development files for xmlwrapp.
 
-%description devel -l pl
-Pliki nag³ówkowe dla xmlwrapp.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe dla xmlwrapp.
 
 %package static
 Summary:	Static libraries for xmlwrapp
-Summary(pl):	Biblioteki statyczne dla xmlwrapp
+Summary(pl.UTF-8):   Biblioteki statyczne dla xmlwrapp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries for xmlwrapp.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne dla xmlwrapp.
 
 %prep
