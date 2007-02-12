@@ -1,5 +1,5 @@
 Summary:	libxml2 C++ wrapper
-Summary(pl.UTF-8):   Wiązania C++ dla libxml2
+Summary(pl.UTF-8):	Wiązania C++ dla libxml2
 Name:		xmlwrapp
 Version:	0.5.0
 Release:	1
@@ -27,7 +27,7 @@ międzymordzie do libxml2 oraz libxslt.
 
 %package devel
 Summary:	Development files for xmlwrapp
-Summary(pl.UTF-8):   Pliki nagłówkowe dla xmlwrapp
+Summary(pl.UTF-8):	Pliki nagłówkowe dla xmlwrapp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -39,7 +39,7 @@ Pliki nagłówkowe dla xmlwrapp.
 
 %package static
 Summary:	Static libraries for xmlwrapp
-Summary(pl.UTF-8):   Biblioteki statyczne dla xmlwrapp
+Summary(pl.UTF-8):	Biblioteki statyczne dla xmlwrapp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
